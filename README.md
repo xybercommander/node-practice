@@ -9,7 +9,7 @@ This shows the working of modules and exports between different javascript files
 
 # streams.js
 This shows the working of streams and buffer in js
-by creating readStream and <strong>writeStream</strong>
+by creating <strong>readStream</strong> and <strong>writeStream</strong>
 
 # docs
 This has some pseudo texts in them
