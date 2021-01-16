@@ -24,23 +24,23 @@ const fs = require('fs');
 
 
 // ******** directories ********
-// if(!fs.existsSync('./assets')) {
-//     fs.mkdir('./assets', (err) => {
-//         if(err) {
-//             console.log(err);
-//         }
+if(!fs.existsSync('./assets')) {
+    fs.mkdir('./assets', (err) => {
+        if(err) {
+            console.log(err);
+        }
     
-//         console.log('folder created');
-//     })
-// } else {
-//     fs.rmdir('./assets', (err) => {
-//         if(err) {
-//             console.log(err);
-//         }
+        console.log('folder created');
+    })
+} else {
+    fs.rmdir('./assets', (err) => {
+        if(err) {
+            console.log(err);
+        }
         
-//         console.log('folder removed');
-//     })
-// }
+        console.log('folder removed');
+    })
+}
 
 
 
@@ -58,7 +58,3 @@ const fs = require('fs');
 //         console.log('file was written');
 //     })
 // }
-
-fs.writeFile('./streams.js', "const fs = require('fs')", () => {
-    console.log('Stream js file created');
-})
