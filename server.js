@@ -28,8 +28,22 @@ const server = http.createServer((req, res) => {
     // setting the content type
     res.setHeader('Content-Type', 'text/html');
 
+    // Basic routing in node js using switch case
+    let path = './views/';
+    switch(req.url) {
+        case '/':
+            path += 'index.html';
+            break;
+        case '/about':
+            path += 'about.html';
+            break;
+        default:
+            path += '404.html';
+            break;
+    }
+
     // sending an html file to the user
-    fs.readFile('./views/index.html', (err, data) => {
+    fs.readFile(path, (err, data) => {
         if(err) {
             console.log(err);
             res.end();
