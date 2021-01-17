@@ -14,5 +14,11 @@
 //     console.log('lol xyber');
 // }, 1000);
 
-console.log(__dirname);
-console.log(__filename);
+// console.log(__dirname);
+// console.log(__filename);
+
+const _ = require('lodash');
+
+var a = [1, 2, 3, 4, 5, 6];
+var b = _.chunk(a, 3);
+console.log(b);

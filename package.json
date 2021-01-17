@@ -1,0 +1,26 @@
+{
+  "name": "practice",
+  "version": "1.0.0",
+  "description": "Practicing Node JS. Some useful snippets are available in this repo",
+  "main": "file.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xybercommander/node-practice.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xybercommander/node-practice/issues"
+  },
+  "homepage": "https://github.com/xybercommander/node-practice#readme",
+  "dependencies": {
+    "lodash": "^4.17.20"
+  }
+}

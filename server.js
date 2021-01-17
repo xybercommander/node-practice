@@ -4,6 +4,8 @@ const http = require('http');
 // calling the file system module
 const fs = require('fs');
 
+const _ = require('lodash');
+
 
 
 /* ******** BASIC TEXT SENDING STUFF ********** */
@@ -23,7 +25,10 @@ const fs = require('fs');
 
 
 const server = http.createServer((req, res) => {
-    console.log(req.url, req.method);
+    //lodash
+    const num = _.random(0, 20);
+    console.log(num);
+    
 
     // setting the content type
     res.setHeader('Content-Type', 'text/html');
