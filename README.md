@@ -14,9 +14,16 @@ by creating <strong>readStream</strong> and <strong>writeStream</strong>
 # docs
 This has some pseudo texts in them
 
+<hr>
+
 # views and server.js
 Views directory has the html pages that we are going to hook up with <br>
 <strong>server.js</strong>
 <br>
 server.js is the file that we are going to use to set up the localhost
+    <ul>
+        <li><strong>404.html</strong> is the error page</li>
+        <li><strong>about.html</strong> is the about page</li>
+        <li><strong>index.html</strong> is the main page</li>
+    </ul>
 
