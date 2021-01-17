@@ -1,6 +1,8 @@
 # node-practice
 Practicing Node JS. Some useful snippets are available in this repo
 
+# I removed all the practice files like file.js, stream.js, etc into <i>practice_files</i> directory
+
 # file.js
 This has reading and writing of files and directories related methods
 
