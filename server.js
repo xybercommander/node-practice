@@ -1,3 +1,7 @@
+// ****************************
+// THIS CODE SHOWS ROUTING IN RAW node.js WAY
+// ****************************
+
 // Using the http module to create a server
 const http = require('http');
 
@@ -28,7 +32,7 @@ const server = http.createServer((req, res) => {
     //lodash
     const num = _.random(0, 20);
     console.log(num);
-    
+
 
     // setting the content type
     res.setHeader('Content-Type', 'text/html');
