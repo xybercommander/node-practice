@@ -6,6 +6,9 @@ const app = express();
 // listen for request
 app.listen(3000);
 
+// register view engine
+app.set('view engine', 'ejs');
+
 
 app.get('/', (req, res) => {
     // res.send('<p>Home Page<p>');
