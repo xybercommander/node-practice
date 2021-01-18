@@ -1,12 +1,12 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog Xyber</title>
 </head>
+
 <body>
-    
+  
     <nav>
         <div class="site-title">
             <a href="/"><h1>Blog Xyber</h1></a>
@@ -20,9 +20,17 @@
         </ul>
     </nav>
 
-    <div class="blogs content">
-        <h2>ALL Blogs</h2>
-    </div>
+  <div class="create-blog content">
+    <form>
+        <label for="title">Blog title: </label>
+        <input type="text" id="title" required>
+        <label for="snippet">Blog snippet: </label>
+        <input type="text" id="snippet" required>
+        <label for="body">Blog body: </label>
+        <textarea id="body" required></textarea>
+        <button>Submit</button>
+    </form>
+  </div>
 
 </body>
 </html>
