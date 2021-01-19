@@ -7,19 +7,7 @@
 </head>
 <body>
     
-    <nav>
-        <div class="site-title">
-            <h2><%= name %></h2>
-            <a href="/"><h1>Blog Xyber</h1></a>
-            <p>A Xyber Commander Site</p>
-        </div>
-
-        <ul>
-            <li><a href="/">Blogs</a></li>
-            <li><a href="/about">About</a></li>
-            <li><a href="/blogs/create">New Blog</a></li>
-        </ul>
-    </nav>
+    <%- include('./partials/nav.ejs')  %> 
 
     <div class="blogs content">
         <h2>ALL Blogs</h2>
