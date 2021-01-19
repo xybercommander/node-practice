@@ -19,7 +19,14 @@ app.listen(3000);
 // })
 
 app.get('/', (req, res) => {
-    res.render('index', { title : 'Home' });
+
+    const blogs = [
+        {title: 'Xyber finds eggs', snippet: 'Lmao lol lulz rofl hahahah honhonhon'},
+        {title: 'Xyber becomes platinum', snippet: 'Lmao lol lulz rofl hahahah honhonhon'},
+        {title: 'Xyber becomes radiant', snippet: 'Lmao lol lulz rofl hahahah honhonhon'}
+    ]
+
+    res.render('index', { title : 'Home', blogs: blogs });
 })
 
 
