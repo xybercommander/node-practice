@@ -30,4 +30,5 @@ server.js also has the important status code stuff
         <li><strong>about.html</strong> is the about page</li>
         <li><strong>index.html</strong> is the main page</li>
     </ul>
-
+<br>
+<strong> I changed all the html files to ejs files for view engine purposes</strong>
