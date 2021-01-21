@@ -1,4 +1,5 @@
 const express = require('express');
+const morgan = require('morgan');
 
 // express app
 const app = express();
@@ -9,6 +10,9 @@ app.set('view engine', 'ejs');
 // listen for request
 app.listen(3000);
 
+app.use(express.static('public'))
+app.use(morgan('dev'));
+
 
 // app.get('/', (req, res) => {
 //     // res.send('<p>Home Page<p>');
@@ -18,10 +22,16 @@ app.listen(3000);
 //     // This is done because by default express takes the system root directory to be the main root
 // })
 
+app.use((req, res, next) => {
+    console.log('New request made!');
+    console.log('Hostname : ' + req.hostname);
+    next();
+})
+
 app.get('/', (req, res) => {
 
     const blogs = [
-        {title: 'Xyber finds eggs', snippet: 'Lmao lol lulz rofl hahahah honhonhon'},
+        {title: 'Xyber becomes gold', snippet: 'Lmao lol lulz rofl hahahah honhonhon'},
         {title: 'Xyber becomes platinum', snippet: 'Lmao lol lulz rofl hahahah honhonhon'},
         {title: 'Xyber becomes radiant', snippet: 'Lmao lol lulz rofl hahahah honhonhon'}
     ]
