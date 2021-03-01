@@ -23,10 +23,11 @@ app.use(morgan('dev'));
 // })
 
 app.use((req, res, next) => {
+    console.log('Hi Samrat');
     console.log('New request made!');
-    console.log('Hostname : ' + req.hostname);
+    console.log('host: ' , req.hostname);
     next();
-})
+});
 
 app.get('/', (req, res) => {
 
