@@ -1,14 +1,22 @@
 const express = require('express');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
 
 // express app
 const app = express();
 
+// Connect to mongoDB
+const dbURI = 'mongodb+srv://xybercommander:soumendra@xybercluster.usni0.mongodb.net/node-tuts?retryWrites=true&w=majority';
+mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then((result) => {
+        console.log('CONNECTED TO DB');
+        // listen for request
+        app.listen(3000);
+    })
+    .catch((err) => console.log(err));
+
 // register view engine
 app.set('view engine', 'ejs');
-
-// listen for request
-app.listen(3000);
 
 app.use(express.static('public'))
 app.use(morgan('dev'));
@@ -22,12 +30,9 @@ app.use(morgan('dev'));
 //     // This is done because by default express takes the system root directory to be the main root
 // })
 
-app.use((req, res, next) => {
-    console.log('Hi Samrat');
-    console.log('New request made!');
-    console.log('host: ' , req.hostname);
-    next();
-});
+// app.use((req, res) => {
+//     console.log(req.ip);
+// })
 
 app.get('/', (req, res) => {
 
@@ -39,7 +44,6 @@ app.get('/', (req, res) => {
 
     res.render('index', { title : 'Home', blogs: blogs });
 })
-
 
 app.get('/about', (req, res) => {
     // res.send('<p>About Page<p>');
