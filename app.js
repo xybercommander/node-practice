@@ -1,6 +1,7 @@
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const Blog = require('./models/blog');
 
 // express app
 const app = express();
@@ -18,7 +19,9 @@ mongoose.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true })
 // register view engine
 app.set('view engine', 'ejs');
 
-app.use(express.static('public'))
+// app.use(express.static('public'))
+// ^^ FOR CONNECTING THE STATIC FILES IN THE PROJECT
+
 app.use(morgan('dev'));
 
 
@@ -33,6 +36,44 @@ app.use(morgan('dev'));
 // app.use((req, res) => {
 //     console.log(req.ip);
 // })
+
+
+// MONGOOSE AND MONGODB SANDBOX ROUTES FOR REFERENCE
+// FOR ADDING A BLOG TO THE DATABASE
+// app.get('/add-blog', (req, res) => {
+//     const blog = new Blog({
+//         title: 'new blog 2',
+//         snippet: 'about my new blog',
+//         body: 'more about my new blog'
+//     });
+
+//     blog.save()
+//         .then((result) => {
+//             res.send(result);
+//         })
+//         .catch((err) => console.log(err))
+// })
+
+// // FOR RETRIEVING ALL THE DOCS
+// app.get('/all-blogs', (req, res) => {
+//     Blog.find()
+//         .then((result) => {
+//             res.send(result);
+//         })
+//         .catch((err) => console.log(err))
+// })
+
+// // TO GET A SINGLE BLOG
+// app.get('/single-blog', (req, res) => {
+//     Blog.findById('604052443650961240a3abff')
+//         .then((result) => {
+//             res.send(result)
+//         })
+//         .catch((err) => console.log(err))
+// })
+
+
+
 
 app.get('/', (req, res) => {
 
