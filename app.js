@@ -76,21 +76,14 @@ app.use(morgan('dev'));
 
 
 app.get('/', (req, res) => {
-
-    const blogs = [
-        {title: 'Xyber becomes gold', snippet: 'Lmao lol lulz rofl hahahah honhonhon'},
-        {title: 'Xyber becomes platinum', snippet: 'Lmao lol lulz rofl hahahah honhonhon'},
-        {title: 'Xyber becomes radiant', snippet: 'Lmao lol lulz rofl hahahah honhonhon'}
-    ]
-
-    res.render('index', { title : 'Home', blogs: blogs });
-})
+    res.redirect('/blogs');
+});
 
 app.get('/about', (req, res) => {
     // res.send('<p>About Page<p>');
     // res.sendFile('./views/about.html', { root: __dirname });
     res.render('about', { title: 'About' })
-})
+});
 
 
 // redirects
@@ -98,11 +91,20 @@ app.get('/about', (req, res) => {
 //     res.redirect('./about');
 // })
 
+// for showing all the blogs
+
+app.get('/blogs', (req, res) => {
+    Blog.find().sort({ createdAt: -1 })
+        .then((result) => {
+            res.render('index', { title: 'All Blogs', blogs: result })
+        })
+        .catch((err) => console.log(err));
+})
 
 // rendering the create page
 app.get('/blogs/create', (req, res) => {
     res.render('create', { title: 'Crete a New Blog' })
-})
+});
 
 
 // 404 error
